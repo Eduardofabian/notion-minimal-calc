@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent; /* Fica invisível no embed do Notion */
+}
+
+.calculator {
+    background-color: #2f3437; /* Cor de fundo do Notion Dark */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 260px;
+}
+
+.display {
+    background-color: #3f4447;
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: right;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    min-height: 60px;
+    overflow-x: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.btn {
+    background-color: #3f4447;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #4f5457;
+}
+
+.btn.operator {
+    background-color: #5c5c5c;
+}
+
+.btn.clear {
+    background-color: #e06c75;
+    color: white;
+}
+
+.btn.equal {
+    background-color: #0b6e99;
+    grid-column: 4;
+    grid-row: 3 / span 3;
+}
+
+.btn.zero {
+    grid-column: 1 / span 2;
+}
