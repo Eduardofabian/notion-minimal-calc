@@ -10,63 +10,76 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: transparent; /* Fica invisível no embed do Notion */
+    background-color: transparent; /* Invisível no embed */
 }
 
 .calculator {
-    background-color: #2f3437; /* Cor de fundo do Notion Dark */
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #f1f1f1; /* Fundo claro minimalista */
+    padding: 25px 20px;
+    border-radius: 4px; /* Quase quadrado, bem clean */
     width: 260px;
+    /* Uma bordinha super fina só pra delimitar o espaço no Notion */
+    border: 1px solid #e6e6e6; 
 }
 
 .display {
-    background-color: #3f4447;
-    color: #ffffff;
-    font-size: 2rem;
+    background-color: transparent;
+    color: #37352f; /* Cor do texto padrão do Notion */
+    font-size: 2.5rem;
+    font-weight: 300;
     text-align: right;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    padding: 10px 5px;
+    margin-bottom: 25px;
     min-height: 60px;
+    /* Sublinhado forte no visor para separar dos botões */
+    border-bottom: 2px solid #37352f; 
     overflow-x: auto;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    gap: 15px 10px;
 }
 
 .btn {
-    background-color: #3f4447;
-    color: #ffffff;
+    background-color: transparent;
+    color: #37352f;
     border: none;
-    padding: 15px;
+    padding: 5px 0;
     font-size: 1.2rem;
-    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
+    /* Linha base super sutil, quase invisível */
+    border-bottom: 1px solid #d9d9d9; 
 }
 
+/* O "pulo do gato": o sublinhado fica escuro quando passa o mouse */
 .btn:hover {
-    background-color: #4f5457;
+    border-bottom: 2px solid #37352f; 
 }
 
+/* Deixando os operadores um pouco mais gordinhos pra destacar */
 .btn.operator {
-    background-color: #5c5c5c;
+    font-weight: 600;
 }
 
+/* O botão de limpar (C) com o vermelho sutil do Notion */
 .btn.clear {
-    background-color: #e06c75;
-    color: white;
+    color: #e03e3e;
+    border-bottom: 1px solid #f0a8a8;
 }
 
+.btn.clear:hover {
+    border-bottom: 2px solid #e03e3e;
+}
+
+/* O botão de igual ocupa mais espaço e ganha um destaque minimalista */
 .btn.equal {
-    background-color: #0b6e99;
+    font-weight: 600;
     grid-column: 4;
     grid-row: 3 / span 3;
+    border-bottom: 2px solid #37352f; /* Já fica com a linha forte */
 }
 
 .btn.zero {
